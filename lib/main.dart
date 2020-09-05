@@ -21,8 +21,9 @@ class MyApp extends StatelessWidget {
               Text(
                 'Shrestha Sonali',
                 style: TextStyle(
-                  color: Colors.white70,
+                  color: Colors.lightBlueAccent,
                   fontWeight: FontWeight.bold,
+                  fontSize: 24.0,
                 ),
               ),
               Text(
@@ -35,17 +36,52 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Container(
+                color: Colors.white,
+                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.symmetric(vertical: 10.0,
+                horizontal: 25.0),
                 child: Row(
                   children: <Widget>[
-                    Icon(Icons.add),
+                    Icon(
+                        Icons.phone,
+                    color: Colors.amber,
+                    ),
+                    Text(
+                      ' 91+ 6832647367',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.blueAccent.shade100,
+
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                color: Colors.white,
+                  padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.symmetric(vertical: 10.0,
+                horizontal: 25.0),
+                child: Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.email,
+                      color: Colors.amberAccent.shade200,
+                    ),
+                    Text(
+                      'Shrestha@gmail.com',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.lightBlueAccent.shade200,
+                      ),
+                    )
                   ],
                 ),
               )
             ],
           ),
         ),
-         ),
+      ),
     );
   }
 }
-
