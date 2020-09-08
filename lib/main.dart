@@ -1,9 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sign_in_page/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -17,6 +20,8 @@ class MyApp extends StatelessWidget {
  }
 
   class _MyHomePageState extends State<MyHomePage> {
+  final emailcontroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
   Widget build(BuildContext context) {
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
@@ -50,6 +55,7 @@ class MyApp extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 TextField(
+                  controller: emailcontroller,
                   decoration: InputDecoration(
                     labelText: 'EMAIL',
                     labelStyle: TextStyle(
@@ -64,6 +70,7 @@ class MyApp extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 TextField(
+                  controller: passwordcontroller,
                   decoration: InputDecoration(
                       labelText: 'PASSWORD',
                       labelStyle: TextStyle(
@@ -100,7 +107,11 @@ class MyApp extends StatelessWidget {
                     color: Colors.green,
                     elevation: 7.0,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: ()
+                      async {
+                        var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: emailcontroller.text, password: passwordcontroller.text);
+                        print(result.user);
+                      },
                       child: Center(
                         child: Text(
                           'LOGIN',
@@ -135,7 +146,7 @@ class MyApp extends StatelessWidget {
                          // child: ImageIcon(AssetImage('assets/facebook.png')),
                         ),
                         Center(
-                          child: Text('Login with Facebook',
+                          child: Text('Login with Google',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Montserrat'
