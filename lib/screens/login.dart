@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_page/main.dart';
+import 'file:///C:/Users/shres/AndroidStudioProjects/sign_in_page/lib/screens/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-   class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   @override
-   _MyHomePageState createState() => new _MyHomePageState();
- }
+  _MyHomePageState createState() => new _MyHomePageState();
+}
 
-  class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
   final emailcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
   Widget build(BuildContext context) {
@@ -30,23 +30,23 @@ class MyApp extends StatelessWidget {
           Container(
             child: Stack(
               children: <Widget>[
-              Container(
-                padding: EdgeInsets.fromLTRB(15.0, 90.0, 0.0, 0.0),
-                child: Text(
-                  'Hello',
-                  style: TextStyle(
-                    fontSize: 50.0, fontWeight: FontWeight.bold
+                Container(
+                  padding: EdgeInsets.fromLTRB(15.0, 90.0, 0.0, 0.0),
+                  child: Text(
+                    'Hello',
+                    style: TextStyle(
+                        fontSize: 50.0, fontWeight: FontWeight.bold
+                    ),
                   ),
                 ),
-              ),
                 Container(
                   padding: EdgeInsets.fromLTRB(15.0, 140.0, 0.0, 0.0),
                   child: Text(
-                    'There',
-                    style: TextStyle(
-                      fontSize: 50.0, fontWeight: FontWeight.bold, color: Colors.green)
-                    ),
+                      'There',
+                      style: TextStyle(
+                          fontSize: 50.0, fontWeight: FontWeight.bold, color: Colors.green)
                   ),
+                ),
               ],
             ),
           ),
@@ -57,14 +57,14 @@ class MyApp extends StatelessWidget {
                 TextField(
                   controller: emailcontroller,
                   decoration: InputDecoration(
-                    labelText: 'EMAIL',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey
-                    ),
+                      labelText: 'EMAIL',
+                      labelStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey
+                      ),
                       focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green)
+                          borderSide: BorderSide(color: Colors.green)
                       )
                   ),
                 ),
@@ -90,12 +90,12 @@ class MyApp extends StatelessWidget {
                   padding: EdgeInsets.only(top: 15.0, left: 20.0),
                   child: InkWell(
                     child: Text('Forget Password',
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat',
-                      decoration: TextDecoration.underline
-                    ),),
+                      style: TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                          decoration: TextDecoration.underline
+                      ),),
                   ),
                 ),
                 SizedBox(height: 40.0),
@@ -115,14 +115,14 @@ class MyApp extends StatelessWidget {
                       child: Center(
                         child: Text(
                           'LOGIN',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Montserrat'
-                              ),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat'
+                          ),
                         ),
                       ),
-                     ),
+                    ),
                   ),
                 ),
                 SizedBox(height: 20.0),
@@ -131,26 +131,26 @@ class MyApp extends StatelessWidget {
                   color: Colors.transparent,
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black,
-                        style: BorderStyle.solid,
-                        width: 1.0
-                      ),
-                          color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20.0)
+                        border: Border.all(
+                            color: Colors.black,
+                            style: BorderStyle.solid,
+                            width: 1.0
+                        ),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20.0)
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Center(
-                         // child: ImageIcon(AssetImage('assets/facebook.png')),
+                          // child: ImageIcon(AssetImage('assets/facebook.png')),
                         ),
                         Center(
                           child: Text('Login with Google',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat'
-                          ),),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat'
+                            ),),
                         )
                       ],
                     ),
@@ -166,18 +166,18 @@ class MyApp extends StatelessWidget {
               Text(
                 'New to Spotify ?',
                 style: TextStyle(
-                  fontFamily: 'Montserrat'),
+                    fontFamily: 'Montserrat'),
               ),
               SizedBox(width: 5.0),
               InkWell(
                 onTap: () {},
                 child: Text('Register',
-                style: TextStyle(
-                  color: Colors.green,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.underline
-                ),),
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline
+                  ),),
               )
             ],
           )
@@ -185,4 +185,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-  }
+}

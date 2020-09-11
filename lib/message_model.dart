@@ -64,4 +64,51 @@ class Message {
     imageUrl: ''
     );
 
+    //Favorite Contacts
+    List<User> favorites = [james, steven, olivia, john, grey];
+
+    //Example chats on Home Screen
+    List<Message> chats = [
+      Message(
+        sender: james,
+        time: '5:30 PM',
+        text: 'Hey, how\'s it going? What did you do today?',
+        isLiked: false,
+        unread: true,
+      ),
+
+      Message(
+        sender: steven,
+        time: '4:30 PM',
+        text: 'Hey, how\'s it going? What did you do today?',
+        isLiked: false,
+        unread: true,
+      ),
+
+      Message(
+        sender: olivia,
+        time: '3:30 PM',
+        text: 'Hey, how\'s it going? What did you do today?',
+        isLiked: false,
+        unread: true,
+      ),
+
+      Message(
+        sender: john,
+        time: '2:30 PM',
+        text: 'Hey, how\'s it going? What did you do today?',
+        isLiked: false,
+        unread: true,
+      ),
+
+      Message(
+        sender: grey,
+        time: '1:00 PM',
+        text: 'Hey, how\'s it going? What did you do today?',
+        isLiked: false,
+        unread: false,
+      ),
+
+    ];
+
 

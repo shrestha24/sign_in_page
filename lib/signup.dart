@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_page/main.dart';
+import 'file:///C:/Users/shres/AndroidStudioProjects/sign_in_page/lib/screens/main.dart';
 
 void main() => runApp(new MyApp());
 
