@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
 import 'file:///C:/Users/shres/AndroidStudioProjects/sign_in_page/lib/screens/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sign_in_page/signup.dart';
 
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: new MyHomePage(),
-    );
-  }
-}
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
@@ -109,8 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: ()
                       async {
-                        var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: emailcontroller.text, password: passwordcontroller.text);
-                        print(result.user);
+                        var result = await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailcontroller.text.trim(), password: passwordcontroller.text.trim());
+                        print(result.user.email);
+                        print("Email Id : ${result.user.email}");
+                        print("UID :${result.user.uid}");
                       },
                       child: Center(
                         child: Text(
@@ -164,13 +156,17 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'New to Spotify ?',
+                'New to App ?',
                 style: TextStyle(
                     fontFamily: 'Montserrat'),
               ),
               SizedBox(width: 5.0),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => MyHomePage1()
+                  ));
+                },
                 child: Text('Register',
                   style: TextStyle(
                       color: Colors.green,

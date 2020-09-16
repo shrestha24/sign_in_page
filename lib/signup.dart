@@ -1,23 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'file:///C:/Users/shres/AndroidStudioProjects/sign_in_page/lib/screens/main.dart';
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: new MyHomePage(),
-    );
-  }
-}
-class MyHomePage extends StatefulWidget {
+class MyHomePage1 extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage1> {
+  final emailcontroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
   Widget build(BuildContext context) {
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
@@ -43,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: <Widget>[
                 TextField(
+                  controller: emailcontroller,
                   decoration: InputDecoration(
                       labelText: 'EMAIL',
                       labelStyle: TextStyle(
@@ -57,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SizedBox(height: 20.0),
                 TextField(
+                  controller: passwordcontroller,
                   decoration: InputDecoration(
                       labelText: 'PASSWORD',
                       labelStyle: TextStyle(
@@ -94,7 +88,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.green,
                     elevation: 7.0,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: ()
+                      async {
+                        var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: emailcontroller.text.trim(), password: passwordcontroller.text.trim());
+                        print(result.user.email);
+                        print("Email Id : ${result.user.email}");
+                        print("UID :${result.user.uid}");
+                      },
                       child: Center(
                         child: Text(
                           'SIGNUP',
